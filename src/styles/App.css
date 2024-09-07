@@ -1,0 +1,211 @@
+/* Overall container styling */
+.app {
+  text-align: center;
+  font-family: "Poppins", sans-serif; /* Modern, sleek font */
+  color: #2c3e50; /* Deeper text color for contrast */
+  background: linear-gradient(
+    135deg,
+    #83a4d4,
+    #b6fbff
+  ); /* Cool blue gradient */
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Animated background */
+.app::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc5577' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa00aa' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d7567f' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b2006e' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23e35788' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23ba0184' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23ef5891' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23c2017a' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23fb5a9a' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23ca0270' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23d20266' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* Input and textarea styling */
+input,
+textarea {
+  width: 100%;
+  margin: 15px 0;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Button styling */
+button {
+  margin: 15px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #0056b3, #0095ff);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+/* Modal close button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #e74c3c;
+  transform: rotate(90deg);
+}
+
+/* Adding smooth transitions and hover effects */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Cool hover effect for inputs */
+input:hover,
+textarea:hover {
+  transform: scale(1.02);
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+/* Focus within effect for form groups */
+.form-group:focus-within {
+  transform: translateY(-5px);
+}
+
+/* Add some cool CSS shapes for decoration */
+.decoration {
+  position: absolute;
+  z-index: -1;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #3498db, #9b59b6);
+  top: 10%;
+  left: 5%;
+  opacity: 0.7;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #e74c3c, #f39c12);
+  bottom: 15%;
+  right: 10%;
+  transform: rotate(45deg);
+  opacity: 0.7;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #2ecc71;
+  top: 40%;
+  right: 15%;
+  opacity: 0.7;
+}
